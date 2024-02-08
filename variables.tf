@@ -27,6 +27,13 @@ variable "name" {
   description = "(Required) The Name of the Instance."
 }
 
+variable "deletion_protection" {
+  type        = string
+  description = "(Optional) Wheter to activate or not deletion protection. Must be set to false to allow deletion of a SQL istance."
+
+  default = true
+}
+
 variable "database_version" {
   type        = string
   description = "(Required) The MySQL, PostgreSQL or SQL Server Version to use."

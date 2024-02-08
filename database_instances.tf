@@ -11,6 +11,8 @@ resource "google_sql_database_instance" "database" {
 
   master_instance_name = var.master_instance_name
 
+  deletion_protection = var.deletion_protection
+
   settings {
 
     activation_policy = var.activation_policy
