@@ -128,6 +128,13 @@ variable "tier" {
   description = "(Required) The Machine Type to use."
 }
 
+variable "edition" {
+  type        = string
+  description = "(Optional) The Edition Type to use. Applicable to PostgreSQL instances"
+
+  default = null
+}
+
 variable "authorized_networks" {
   type        = list(any)
   description = "(Optional) Authorized Networks."

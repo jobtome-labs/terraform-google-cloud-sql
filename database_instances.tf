@@ -66,6 +66,8 @@ resource "google_sql_database_instance" "database" {
 
     tier = var.tier
 
+    edition = var.edition
+
     pricing_plan = "PER_USE"
 
     user_labels = var.user_labels
