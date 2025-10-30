@@ -13,6 +13,10 @@ resource "google_sql_database_instance" "database" {
 
   deletion_protection = var.deletion_protection
 
+  lifecycle {
+    ignore_changes = var.ignore_disk_size_changes ? [settings[0].disk_size] : []
+  }
+
   settings {
 
     activation_policy = var.activation_policy

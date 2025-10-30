@@ -109,6 +109,13 @@ variable "disk_type" {
   default = "PD_SSD"
 }
 
+variable "ignore_disk_size_changes" {
+  type        = bool
+  description = "Whether to ignore disk size changes in the SQL instance (useful when disk auto increase is enabled)."
+
+  default     = false
+}
+
 variable "maintenance_window_day" {
   type        = number
   description = "(Optional) Declares a One-Hour Maintenance Window when an Instance can automatically restart to apply Updates. Day of Week (`1-7`)."
