@@ -1,7 +1,3 @@
-# Terraform-google-cloud-sql
-
-Terraform Google Cloud SQL
-
 ## Requirements
 
 | Name | Version |
@@ -48,6 +44,7 @@ No modules.
 | <a name="input_disk_size"></a> [disk\_size](#input\_disk\_size) | (Optional) The Size of Data Disk, in GB. Size of a Running Instance cannot be reduced but can be increased. The Minimum Value is 10GB. Defaults to `10`. | `number` | `10` | no |
 | <a name="input_disk_type"></a> [disk\_type](#input\_disk\_type) | (Optional) The Type of Data Disk: `PD_SSD` or `PD_HDD`. Defaults to `PD_SSD`. | `string` | `"PD_SSD"` | no |
 | <a name="input_edition"></a> [edition](#input\_edition) | (Optional) The Edition Type to use. Applicable to PostgreSQL instances | `string` | `null` | no |
+| <a name="input_final_backup_config"></a> [final\_backup\_config](#input\_final\_backup\_config) | The final\_backup\_config settings for the database. | <pre>object({<br/>    enabled        = optional(bool, false)<br/>    retention_days = optional(number, 1)<br/>  })</pre> | `null` | no |
 | <a name="input_insights_config"></a> [insights\_config](#input\_insights\_config) | (Optional) Query Insights (MySQL, PostgreSQL) Configuration. | <pre>object({<br/>    query_insights_enabled  = bool<br/>    query_string_length     = number<br/>    record_application_tags = bool<br/>    record_client_address   = bool<br/>    query_plans_per_minute  = number<br/>  })</pre> | `null` | no |
 | <a name="input_maintenance_window_day"></a> [maintenance\_window\_day](#input\_maintenance\_window\_day) | (Optional) Declares a One-Hour Maintenance Window when an Instance can automatically restart to apply Updates. Day of Week (`1-7`). | `number` | `null` | no |
 | <a name="input_maintenance_window_hour"></a> [maintenance\_window\_hour](#input\_maintenance\_window\_hour) | (Optional) Declares a One-Hour Maintenance Window when an Instance can automatically restart to apply Updates. Hour of Day (`0-23`). | `number` | `null` | no |

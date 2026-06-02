@@ -68,6 +68,15 @@ resource "google_sql_database_instance" "database" {
       }
     }
 
+    dynamic "final_backup_config" {
+      for_each = var.final_backup_config != null ? [var.final_backup_config] : []
+
+      content {
+        enabled        = lookup(final_backup_config.value, "enabled", false)
+        retention_days = lookup(final_backup_config.value, "enabled", false) ? lookup(final_backup_config.value, "retention_days") : null
+      }
+    }
+
     tier = var.tier
 
     edition = var.edition

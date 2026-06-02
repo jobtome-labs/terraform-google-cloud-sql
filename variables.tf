@@ -181,6 +181,16 @@ variable "insights_config" {
   default = null
 }
 
+variable "final_backup_config" {
+  type = object({
+    enabled        = optional(bool, false)
+    retention_days = optional(number, 1)
+  })
+  description = "The final_backup_config settings for the database."
+
+  default = null
+}
+
 variable "databases" {
   type = list(
     object({
